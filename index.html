@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR-код генератор</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>QR-код генератор</h1>
+    
+    <form method="POST">
+        <label>Введіть текст для генерації QR-коду:</label><br><br>
+        <input type="text" name="text" value="{{ user_text }}" placeholder="Введіть ваш текст тут" size="50"><br><br>
+        <button type="submit">Згенерувати QR-код</button>
+    </form>
+    
+    {% if qr_code_url %}
+    <h2>Ваш QR-код:</h2>
+    <img src="{{ qr_code_url }}" alt="QR-код">
+    <p><strong>Закодований текст:</strong> {{ user_text }}</p>
+    {% endif %}
+</body>
+</html>
